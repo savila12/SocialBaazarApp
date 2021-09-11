@@ -19,6 +19,7 @@ struct ProfileView: View {
             SocialBaazarView()
         }
         .frame(maxHeight: .infinity)
+        .navigationBarHidden(true)
         
     }
 }

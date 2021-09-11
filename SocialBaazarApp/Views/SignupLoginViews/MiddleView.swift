@@ -11,6 +11,7 @@ struct MiddleView: View {
     
     @State var phoneEmailTxt = ""
     @State var password = ""
+    @State var isActive = false
     
     var body: some View {
         VStack(spacing: 40) {
@@ -36,19 +37,32 @@ struct MiddleView: View {
 
             }.padding(EdgeInsets.init(top: 0, leading: 30, bottom: 0, trailing: 30))
             
-            Button("login") {
-                
+            NavigationLink(
+                destination: ProfileView(),
+                isActive: $isActive) {
+                Button("login") {
+                    self.isActive = true
+                    print("Button is Pressed")
+                }
+                .padding()
+                .padding(EdgeInsets.init(top: 5, leading: 100, bottom: 5, trailing: 100))
+                .background(Color.init(red: 207/255, green: 115/255, blue: 73/255, opacity: 1.0))
+                .cornerRadius(25)
+                .foregroundColor(.white)
             }
-            .padding()
-            .padding(EdgeInsets.init(top: 5, leading: 100, bottom: 5, trailing: 100))
-            .background(Color.init(red: 207/255, green: 115/255, blue: 73/255, opacity: 1.0))
-            .cornerRadius(25)
-            .foregroundColor(.white)
             
-            Text("FORGOT PASSWORD?")
-                .padding(EdgeInsets.init(top: 0, leading: -90, bottom: 0, trailing: 40))
+            NavigationLink(
+                destination: ForgotPwView(),
+                isActive: $isActive) {
+                Button("Forgot Password") {
+                    self.isActive = true
+                    print("Button is Pressed")
+                }
+                .multilineTextAlignment(.leading)
                 .font(.subheadline).multilineTextAlignment(.leading)
-                .foregroundColor(.gray)
+                    .foregroundColor(.gray)
+            }
+           
             
         }
     }

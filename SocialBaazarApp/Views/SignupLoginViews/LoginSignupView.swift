@@ -10,14 +10,17 @@ import SwiftUI
 struct LoginSignupView: View {
      
     var body: some View {
-        VStack{
-            TopView()
-            
-            MiddleView()
-            Spacer()
-            BottomView()
-            
+        
+        NavigationView {
+            VStack{
+                TopView()
+                MiddleView()
+                Spacer()
+                BottomView()
+                
+            }.navigationBarHidden(true)
         }
+       
         
     }
 }
