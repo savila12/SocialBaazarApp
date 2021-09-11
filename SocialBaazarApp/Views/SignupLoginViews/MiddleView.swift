@@ -38,7 +38,7 @@ struct MiddleView: View {
             }.padding(EdgeInsets.init(top: 0, leading: 30, bottom: 0, trailing: 30))
             
             NavigationLink(
-                destination: ProfileView(),
+                destination: ImagesView(),
                 isActive: $isActive) {
                 Button("login") {
                     self.isActive = true

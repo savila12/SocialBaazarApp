@@ -17,6 +17,7 @@ struct ImagesView: View {
             
         }.ignoresSafeArea()
         .frame(maxHeight: .infinity)
+        .navigationBarHidden(true)
     }
 }
 
