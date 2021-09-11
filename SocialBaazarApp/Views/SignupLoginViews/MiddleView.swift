@@ -59,11 +59,9 @@ struct MiddleView: View {
                     print("Button is Pressed")
                 }
                 .multilineTextAlignment(.leading)
-                .font(.subheadline).multilineTextAlignment(.leading)
-                    .foregroundColor(.gray)
+                .font(.subheadline)
+                .foregroundColor(.gray)
             }
-           
-            
         }
     }
 }
