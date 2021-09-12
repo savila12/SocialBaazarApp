@@ -8,15 +8,27 @@
 import SwiftUI
 
 struct NavView: View {
+    @State var isActiveA = false
+    
     var body: some View {
         
         HStack(alignment: .center) {
             
-            Image(systemName: "person.crop.circle.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 40, height: 40)
-                .padding(EdgeInsets.init(top: 0, leading: 15, bottom: 0, trailing: 0))
+            NavigationLink(
+                destination: ProfileView(),
+                isActive: $isActiveA) {
+                Button(action: {
+                    self.isActiveA = true
+                }, label: {
+                    Image(systemName: "person.crop.circle.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 40, height: 40)
+                        .padding(EdgeInsets.init(top: 0, leading: 15, bottom: 0, trailing: 0))
+                        .foregroundColor(.black)
+                })
+            }
+            
                 
             
             Image("socialBaazarProfile")

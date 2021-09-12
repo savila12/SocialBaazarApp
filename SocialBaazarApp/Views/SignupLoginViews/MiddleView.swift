@@ -11,7 +11,8 @@ struct MiddleView: View {
     
     @State var phoneEmailTxt = ""
     @State var password = ""
-    @State var isActive = false
+    @State var isActiveA = false
+    @State var isActiveB = false
     
     var body: some View {
         VStack(spacing: 40) {
@@ -39,9 +40,9 @@ struct MiddleView: View {
             
             NavigationLink(
                 destination: ImagesView(),
-                isActive: $isActive) {
+                isActive: $isActiveA) {
                 Button("login") {
-                    self.isActive = true
+                    self.isActiveA = true
                     print("Button is Pressed")
                 }
                 .padding()
@@ -53,9 +54,9 @@ struct MiddleView: View {
             
             NavigationLink(
                 destination: ForgotPwView(),
-                isActive: $isActive) {
+                isActive: $isActiveB) {
                 Button("Forgot Password") {
-                    self.isActive = true
+                    self.isActiveB = true
                     print("Button is Pressed")
                 }
                 .multilineTextAlignment(.leading)
